@@ -7,6 +7,7 @@
     <title>The Better Baker</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
 </head>
 
 <body>
@@ -81,12 +82,12 @@
 
         // Wire up the download button
         document.getElementById('download-addon').addEventListener('click', function () {
-            // Use codeload.github.com for CORS-enabled downloads from GitHub tags/branches
-            const fileUrl = 'https://github.com/thebetterbaker/thebetterbaker_addon/releases/download/TheBetterBaker3.1/thebetterbaker_addon-TheBetterBaker3.1.zip';
-            const filename = 'TheBlenderBaker.zip';
-            downloadExternalFile(fileUrl, filename);
+            // Redirect directly to GitHub release - this bypasses CORS by using a standard browser download
+            window.location.href = 'https://github.com/thebetterbaker/thebetterbaker_addon/releases/download/TheBetterBaker3.1/thebetterbaker_addon-TheBetterBaker3.1.zip';
         });
     </script>
+
+    <script src="lenis-init.js"></script>
 
 </body>
 

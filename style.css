@@ -99,6 +99,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
     padding: 10vw;
     gap: 10vw;
     overflow: clip;
@@ -115,14 +116,30 @@ body {
     transition: translate 0.3s ease-in-out;
 }
 
+@media (max-width: 480px) {
+    .features-section{
+        flex-direction: column;
+    }
+    .feature-card{
+        min-width: 170px;
+        width: 70vw;
+    }
+}
+
 .bake-with-a-button {
     transform: translate(-30vw, 0);
     animation-name: slideinleft;
+    background-image: url(../media/image1.png);
+    background-position: center;
+    background-size: cover;
 }
 
 .any-object {
     transform: translate(30vw, 0);
     animation-name: slideinright;
+    background-image: url(../media/image2.png);
+    background-position: center;
+    background-size: cover;
 }
 
 @keyframes slideinleft {
@@ -147,7 +164,7 @@ body {
 
 .feature-card p {
     font-family: var(--font-header);
-    font-size: 3vw;
+    font-size: 3rem;
     padding: 1vw;
     padding-top: 100px;
 }
