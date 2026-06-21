@@ -71,6 +71,7 @@ header nav a:hover {
         flex-direction: column;
         margin-top: 0;
         height: 80px;
+        gap: 0;
     }
 
     header nav a {
