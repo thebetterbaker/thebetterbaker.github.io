@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Google+Sans+Code:ital,wght,MONO@0,300..800,1;1,300..800,1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --orange: #fca311;
+    --blue: #14213d;
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #e5e5e5;
+    --font-main: 'Montserrat', sans-serif;
+    --font-header: 'Bebas Neue', sans-serif;
+    --font-code: 'Google Sans Code', monospace;
+}
+
+header {
+    background-color: var(--gray);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    /* apply the inline SVG clipPath defined in header.html */
+    -webkit-clip-path: url(#curved-clip);
+    clip-path: url(#curved-clip);
+    overflow: visible;
+    width: 100%;
+    height: 120px;
+    box-sizing: border-box;
+}
+
+img {
+    height: 50px;
+    width: auto;
+}
+
+header nav {
+    margin-top: 1rem;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, font-size 0.3s ease;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: var(--orange);
+    font-size: 1.1rem;
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    img {
+        height: 50px;
+    }
+
+    header nav {
+        position: fixed;
+        flex-direction: column;
+        margin-top: 0;
+        height: 80px;
+    }
+
+    header nav a {
+        font-size: 0.7rem;
+        margin-right: 0;
+        margin: 3px;
+        padding: 0;
+    }
+
+    header nav a:hover {
+        font-size: 0.7rem;
+        background-color: var(--orange);
+        color: var(--white);
+        border-color: var(--orange);
+    }
+}

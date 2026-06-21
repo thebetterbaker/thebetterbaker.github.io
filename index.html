@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Better Baker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main class="main">
+        <div class="content">
+            <h2>Betty Got A Better Baker</h2>
+            <h2>The Baker was a Blender Baker</h2>
+            <h1>A PBR baker that bakes whole objects with a button</h1>
+            <div class="download-section">
+                <!-- Button to fetch the addon from the repository and force download -->
+                <button id="download-addon" class="download-button">Download Addon</button>
+            </div>
+        </div>
+    </main>
+    <div class="in-a-button-section">
+        <h3><span>Whatever</span> needs baking. <span>Whoever</span> needs baking.</h3>
+        <h3>free and open source</h3>
+    </div>
+    <div class="features-section">
+        <div class="bake-with-a-button feature-card">
+            <p>Baking anything with a button, anytime.</p>
+        </div>
+        <div class="any-object feature-card">
+            <p>413 different materials? Thats our problem.</p>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+
+
+    <script>
+        // Function to load external HTML into a placeholder element
+        function loadComponent(placeholderId, filePath) {
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${filePath}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(placeholderId).innerHTML = data;
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Call the function for both the header and footer
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
+
+        // Helper to download a file from another repo via fetch and force a download
+        async function downloadExternalFile(url, filename) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('Network response was not ok');
+                const blob = await res.blob();
+                const blobUrl = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = filename || '';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                window.URL.revokeObjectURL(blobUrl);
+            } catch (err) {
+                console.error(err);
+                alert('Download failed: ' + err.message);
+            }
+        }
+
+        // Wire up the download button
+        document.getElementById('download-addon').addEventListener('click', function () {
+            // Use codeload.github.com for CORS-enabled downloads from GitHub tags/branches
+            const fileUrl = 'https://codeload.github.com/thebetterbaker/thebetterbaker_addon/zip/TheBlenderBaker';
+            const filename = 'TheBlenderBaker.zip';
+            downloadExternalFile(fileUrl, filename);
+        });
+    </script>
+
+</body>
+
+</html>

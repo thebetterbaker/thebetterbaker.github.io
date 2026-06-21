@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-main)
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.main {
+    width: 100%;
+    height: 80vh;
+    background-image: url('/media/Crate.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 40vh;
+}
+
+.main .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    max-width: 80vw;
+    height: 40vh;
+    border-radius: 10px;
+    background-color: rgba(43, 43, 43, 0.1);
+    backdrop-filter: blur(4px);
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.main button {
+    position: relative;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: var(--white);
+    background: linear-gradient(135deg, #03d1f1, #0088ff);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 6px 32px #03d1f1;
+    cursor: pointer;
+    transform: translate(0, 0);
+    transition: transform 0.6s ease, scale 0.6s ease;
+}
+
+.main button:hover {
+    transform: translate(0, -3px);
+    scale: 1.05;
+}
+
+.in-a-button-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--black);
+}
+
+.in-a-button-section h2,
+.in-a-button-section h3 {
+    color: var(--orange);
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem;
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: clamp(4vw);
+}
+
+.in-a-button-section span {
+    color: var(--blue);
+    background-color: var(--orange);
+    padding: 20px;
+    border-radius: 100px;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem;
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 3rem;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* Features----------------------------------------------------- */
+
+.features-section {
+    background-color: var(--black);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10vw;
+    gap: 10vw;
+    overflow: clip;
+}
+
+.feature-card {
+    width: 30vw;
+    height: 600px;
+    border: 3px solid var(--orange);
+    border-radius: 100px;
+    animation-timeline: view();
+    animation-range: entry 10% cover 40%;
+    animation-fill-mode: forwards;
+    transition: translate 0.3s ease-in-out;
+}
+
+.bake-with-a-button {
+    transform: translate(-30vw, 0);
+    animation-name: slideinleft;
+}
+
+.any-object {
+    transform: translate(30vw, 0);
+    animation-name: slideinright;
+}
+
+@keyframes slideinleft {
+    from {
+        transform: translateX(-30vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideinright {
+    from {
+        transform: translateX(30vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.feature-card p {
+    font-family: var(--font-header);
+    font-size: 3vw;
+    padding: 1vw;
+    padding-top: 100px;
+}

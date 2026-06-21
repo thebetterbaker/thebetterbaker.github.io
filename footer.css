@@ -1,0 +1,157 @@
+footer {
+    background-color: var(--blue);
+    color: var(--orange);
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+footer a {
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.3rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+footer .holder {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+footer nav a {
+    margin: 0;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 3rem;
+    background-color: var(--orange);
+}
+
+.creator-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 768px) {
+    footer {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    footer p {
+        font-size: 0.95rem;
+    }
+
+    footer a {
+        font-size: 1.1rem;
+    }
+
+    footer ul li {
+        margin: 0 0.75rem;
+    }
+
+    footer .holder {
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    footer nav {
+        gap: 1.5rem;
+    }
+
+    .vertical-line {
+        height: 2.5rem;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    footer {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+        margin: 0.4rem 0;
+    }
+
+    footer a {
+        font-size: 1rem;
+    }
+
+    footer ul {
+        margin: 0.75rem 0;
+    }
+
+    footer ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    footer .holder {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    footer nav {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    footer nav a {
+        display: block;
+        text-align: center;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .creator-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+    }
+}

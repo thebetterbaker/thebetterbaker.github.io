@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+    <main>
+        <h1>Welcome to the Home Page</h1>
+        <p>This is where your main unique content lives.</p>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+
+    <script>
+        // Function to load external HTML into a placeholder element
+        function loadComponent(placeholderId, filePath) {
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${filePath}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(placeholderId).innerHTML = data;
+                })
+                .catch(error => console.error(error));
+        }
+
+        // Call the function for both the header and footer
+        loadComponent('header-placeholder', '../header.html');
+        loadComponent('footer-placeholder', '../footer.html');
+    </script>
+
+</body>
+</html>
