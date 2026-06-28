@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Better Baker | A powerfull PBR baking add-on for Blender</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="icon" href="media/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
 </head>
@@ -16,12 +18,12 @@
 
     <main class="main">
         <div class="content">
-            <h2>Betty Got A Better Baker</h2>
-            <h2>The Baker was a Blender Baker</h2>
-            <h1>A PBR baker that bakes whole objects with a button</h1>
+            <h2>The baking pipeline Blender should be born with.</h2>
+            <h2>Multiple objects, multiple materials, multiple shaders?</h2>
+            <h1>A PBR baker that bakes ANYTHING with a button.</h1>
             <div class="download-section">
                 <!-- Button to fetch the addon from the repository and force download -->
-                <button id="download-addon" class="download-button">Download Addon</button>
+                <button id="download-addon" class="download-button">Download Addon(v3.2 for Blender 5.1)</button>
             </div>
         </div>
     </main>
@@ -31,10 +33,32 @@
     </div>
     <div class="features-section">
         <div class="bake-with-a-button feature-card">
-            <p>Baking anything with a button, anytime.</p>
+            <p>Baking anything with a button, anytime. Multiple materials on an object? Thats our problem.</p>
         </div>
         <div class="any-object feature-card">
-            <p>413 different materials? Thats our problem.</p>
+            <p>Many objects? With many materials? With many shaders in each material? An button!</p>
+        </div>
+    </div>
+    <div class="capabilities">
+        <div class="slanted-boxr box1">
+            <span>Speed</span>
+            <h3>Reusing Blenders existing baking system with automated node setups, alows this baker to use the existing baking syatem without the buggy interface.</h3>
+        </div>
+        <div class="slanted-boxl box2">
+            <span>Any Node</span>
+            <h3>Even when your blending together shaders, The Better Baker turns it all into one, flawless map, flawlessly.</h3>
+        </div>
+        <div class="slanted-boxr box3">
+            <span>BSDF's</span>
+            <h3>Even the Metalic BSDF(using principaled BSDF is recomended, but its OK to be lazy sometimes).</h3>
+        </div>
+        <div class="slanted-boxl box1">
+            <span>Objects</span>
+            <h3>Some objects belong together. But they need to stay appart? The Better Baker bakes anyone you feel like selecting.</h3>
+        </div>
+        <div class="slanted-boxr box2">
+            <span>Sizes</span>
+            <h3>Textures to infinity. We are not mad, so we haven't TRIED to bake in 83K. But we dont stop you either.</h3>
         </div>
     </div>
     <div id="footer-placeholder"></div>
@@ -83,7 +107,7 @@
         // Wire up the download button
         document.getElementById('download-addon').addEventListener('click', function () {
             // Redirect directly to GitHub release - this bypasses CORS by using a standard browser download
-            window.location.href = 'https://github.com/thebetterbaker/thebetterbaker_addon/releases/download/TheBetterBaker3.1/thebetterbaker_addon-TheBetterBaker3.1.zip';
+            window.location.href = 'https://github.com/thebetterbaker/thebetterbaker_addon/releases/download/TheBetterBaker3.2/thebetterbakerV3_2.zip';
         });
     </script>
 
