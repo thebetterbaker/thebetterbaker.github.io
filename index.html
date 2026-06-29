@@ -83,32 +83,6 @@
         // Call the function for both the header and footer
         loadComponent('header-placeholder', 'header.html');
         loadComponent('footer-placeholder', 'footer.html');
-
-        // Helper to download a file from another repo via fetch and force a download
-        async function downloadExternalFile(url, filename) {
-            try {
-                const res = await fetch(url);
-                if (!res.ok) throw new Error('Network response was not ok');
-                const blob = await res.blob();
-                const blobUrl = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = blobUrl;
-                a.download = filename || '';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-                window.URL.revokeObjectURL(blobUrl);
-            } catch (err) {
-                console.error(err);
-                alert('Download failed: ' + err.message);
-            }
-        }
-
-        // Wire up the download button
-        document.getElementById('download-addon').addEventListener('click', function () {
-            // Redirect directly to GitHub release - this bypasses CORS by using a standard browser download
-            window.location.href = 'https://github.com/thebetterbaker/thebetterbaker_addon/releases/download/TheBetterBaker3.2/thebetterbakerV3_2.zip';
-        });
     </script>
 
     <script src="lenis-init.js"></script>
