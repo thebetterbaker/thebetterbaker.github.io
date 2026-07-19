@@ -298,3 +298,6 @@ main {
         font-size: 0.75rem;
     }
 }
+img {
+    width: 100px;
+}

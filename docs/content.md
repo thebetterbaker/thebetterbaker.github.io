@@ -2,6 +2,8 @@
 
 The Better Baker is a powerfull baking tool that alows you to create quick and easy baked PBR textures for your 3D models. It is designed to be user-friendly and efficient, and most importantly, reliable simple. 
 
+<img src="../media/suzane.jpg" alt="The Better Baker UI" style="display: block; width: 60%; max-width: 200px; height: auto; margin: 1.5rem auto;" />
+
 ## Getting Started
 
 Download the latest version of The Better Baker from our GitHub repository or from the downloads section. <a href="/">Download Now.</a>
@@ -25,6 +27,8 @@ You need not unzip the downloaded file. Not unzipping is recomended.
 
 This is how to use The Better Baker:
 
+You can find the UI interface in the Properties panel under the render tab. The Better Baker is located just under Blenders inbuilt baking settings(which from today, you can ignore). (You will only see it if your render mode is set to Cycles.)
+
 ### Set a texture size
 
 The Better Baker allows you to set a texture size for your baked textures. You can choose from a range of sizes, from 2K to 8K. Select custom size to set a custom texture size beyond the default options.
@@ -39,10 +43,17 @@ Choose texture types to bake. You can select from a range of texture types, incl
 
 If you want to bake multiple textures at once, you can add multiple texture types to the list. The Better Baker will automatically manage the baking process for all selected texture types.
 
-### Select Objects
-Select the objects you want to bake. The Better Baker will automatically manage the baking process for all selected objects.
+### Choose a bake style
 
-Make sure all objects are UV Unwraped and that the UVs are not overlapping. 
+#### Bake Objects
+Select the objects you want to bake(one, or many). The Better Baker will automatically manage the baking process for all selected objects. UV unwraping is necessary, because the Batter Baker uses the mesh's UV coordinates to create the baked textures for the whole object.
+
+Use the Bake selected objects button to bake the selected objects.
+
+#### Bake A Material
+Select a material you want to bake(one, or many). The Better Baker will bake that material into a UV texture that can be later applied to any object. This is a recomeneded practice for converting procedural textures into easily sharable, distributable ones. UV unwraping will not effect the baking process, at all.
+
+Use the Bake selected objects button to bake the selected objects.
 
 ### Press the bake button
 
